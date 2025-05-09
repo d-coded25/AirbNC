@@ -7,11 +7,9 @@ const createDbTables = require('./create-db-tables');
 // Import insert database data function:
 const insertDbData = require('./insert-db-data');
 
-// Import database data:
-const data = require('./data/test/index');
-
 // Database seed function:
 const seedDatabase = async function (data) {
+  createDbTables();
   // Invoke createDbTables function ????
   // Invoke insertDbData function with passed in data ????
 };
