@@ -6,14 +6,20 @@ A project that replicates a simplified version of the Airbnb platform.
 
 ### Project Setup:
 
-1. Make sure to install all dependencies.
+1. Make sure to install all dependencies:
 
-```
+```sh
 npm install
 ```
 
-2. Make sure to setup a local database.
+2. Make sure to setup a local database:
 
-```
+```sh
  npm run db-setup
+```
+
+3. Make sure you have the correct database credentials as shown, stored within an .env file located at the project root level:
+
+```sh
+PGDATABASE=airbnc
 ```
