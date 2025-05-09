@@ -1,0 +1,26 @@
+{
+  "name": "airbnc",
+  "version": "1.0.0",
+  "description": "## Project Overview:",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "db-setup": "psql -f ./db/db-setup.sql",
+    "db-seed-run": "node db/db-seed-run.js "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/d-coded25/AirbNC.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/d-coded25/AirbNC/issues"
+  },
+  "homepage": "https://github.com/d-coded25/AirbNC#readme",
+  "dependencies": {
+    "dotenv": "^16.5.0",
+    "pg": "^8.15.6"
+  }
+}
