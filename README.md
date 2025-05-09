@@ -6,7 +6,7 @@ A project that replicates a simplified version of the Airbnb platform.
 
 ### Project Setup:
 
-1. Make sure to install all dependencies:
+1. Make sure to install all NPM dependencies:
 
 ```sh
 npm install
@@ -22,4 +22,10 @@ npm install
 
 ```sh
 PGDATABASE=airbnc
+```
+
+4. To seed the database, please run the following:
+
+```sh
+npm run db-seed-run
 ```
