@@ -1,13 +1,35 @@
 // Import database connections:
 const db = require('./db-connections');
 
-// Import table queries:
-const { propertyTypes, users, properties, reviews } = require('./db-queries');
+// Import queries:
+const {
+  dropPropertyTypes,
+  dropUsers,
+  dropProperties,
+  dropReviews,
+  createPropertyTypes,
+  createUsers,
+  createProperties,
+  createReviews,
+} = require('./db-queries');
 
 // Database table creation:
 const createDbTables = async function () {
-  // Create property types table:
-  await db.query(propertyTypes);
+  try {
+    await db.query(dropReviews);
+    await db.query(dropProperties);
+    await db.query(dropPropertyTypes);
+    await db.query(dropUsers);
+
+    await db.query(createPropertyTypes);
+    await db.query(createUsers);
+    await db.query(createProperties);
+    await db.query(createReviews);
+
+    console.log('Resolved!');
+  } catch (err) {
+    console.log('Rejected:', err.message);
+  }
 
   // Create users table:
   // Create properties table:
