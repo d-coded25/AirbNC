@@ -3,44 +3,34 @@ const db = require('./db-connections');
 
 // Import queries:
 const {
-  dropPropertyTypes,
-  dropUsers,
-  dropProperties,
-  dropReviews,
-  createPropertyTypes,
-  createUsers,
-  createProperties,
-  createReviews,
+  dropPropertyTypesQuery,
+  dropUsersQuery,
+  dropPropertiesQuery,
+  dropReviewsQuery,
+  createPropertyTypesQuery,
+  createUsersQuery,
+  createPropertiesQuery,
+  createReviewsQuery,
 } = require('./db-queries');
 
 // Database table creation:
 const createDbTables = async function () {
   try {
-    await db.query(dropReviews);
-    await db.query(dropProperties);
-    await db.query(dropPropertyTypes);
-    await db.query(dropUsers);
+    await db.query(dropReviewsQuery);
+    await db.query(dropPropertiesQuery);
+    await db.query(dropPropertyTypesQuery);
+    await db.query(dropUsersQuery);
 
-    await db.query(createPropertyTypes);
-    await db.query(createUsers);
-    await db.query(createProperties);
-    await db.query(createReviews);
+    await db.query(createPropertyTypesQuery);
+    await db.query(createUsersQuery);
+    await db.query(createPropertiesQuery);
+    await db.query(createReviewsQuery);
 
-    console.log('Resolved!');
+    console.log('Resolved Create Tables!');
   } catch (err) {
-    console.log('Rejected:', err.message);
+    console.log('Rejected Create Tables:', err.message);
   }
-
-  // Create users table:
-  // Create properties table:
-  // Create reviews table:
 };
 
 // Export create tables function:
 module.exports = createDbTables;
-
-// Tables:
-// 1. Property types
-// 2. Users
-// 3. Properties
-// 4. Reviews
