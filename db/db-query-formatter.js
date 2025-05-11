@@ -5,3 +5,25 @@ const formatPropertyTypes = function (propertyTypesData) {
   });
   return formattedPropertyTypes;
 };
+
+// Users formatter:
+const formatUsers = function (usersData) {
+  const formattedUsers = usersData.map((user) => {
+    return [
+      user.first_name,
+      user.surname,
+      user.email,
+      user.phone_number,
+      user.role === 'host' ? true : false,
+      user.avatar,
+    ];
+  });
+
+  return formattedUsers;
+};
+
+// Export format data function:
+module.exports = {
+  formatPropertyTypes,
+  formatUsers,
+};
