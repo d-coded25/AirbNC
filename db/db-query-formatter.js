@@ -86,4 +86,6 @@ module.exports = {
   formatUsers,
   formatProperties,
   formatReviews,
+  createUsersIdLookUp,
+  createPropertiesIdLookUp,
 };
